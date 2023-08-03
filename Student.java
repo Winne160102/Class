@@ -37,7 +37,7 @@ public class Student extends People {
 		Class = class1;
 	}
 
-	public void setall(String id, String name, String birthday, String phoneNum, String address, String sex, String block, String Class) {
+	public void setall(String name,String id , String birthday, String phoneNum, String address, String sex, String block, String Class) {
 		super.setall(id, name, birthday, phoneNum, address, sex);
 		this.block = block;
 		this.Class = Class;
@@ -86,11 +86,12 @@ public class Student extends People {
 			System.out.println("Input Name File: ");
 			ClassStudent = sc.nextLine();
 		try {
-			FileWriter fWriter = new FileWriter(ClassStudent + ".txt");
+			FileWriter fWriter = new FileWriter("C:\\Users\\Admin\\Desktop\\lib java\\ClassStudent.txt");
 			BufferedWriter bWriter = new BufferedWriter(fWriter);
 			for (Student data : list) {
 				if(data.getCclass().equals(ClassStudent)) {
-					bWriter.write(data.getid() + ";" + data.getname() + ";" + data.getbirthday() + ";" + data.getphoneNum() + ";" + data.getaddress() + ";" + data.getsex() + ";" + data.getBlock() + ";" + data.getCclass());
+					bWriter.write(data.getname() + ";" + data.getid() + ";" + data.getbirthday() + ";" + data.getphoneNum() + ";" + data.getaddress() + ";" + data.getsex() + ";" + data.getBlock() + ";" + data.getCclass());
+					bWriter.newLine();
 				}
 			}
 			bWriter.close();
